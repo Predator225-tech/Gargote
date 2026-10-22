@@ -1,0 +1,21 @@
+# Facultatif : lance PostgreSQL dans Docker si vous ne l'avez pas installé.
+#   docker compose up -d
+# Les scripts SQL sont exécutés dans l'ordre au premier démarrage du volume.
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: gargote
+      POSTGRES_PASSWORD: gargote
+      POSTGRES_DB: gargote
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./database/01_schema.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
+      - ./database/02_donnees.sql:/docker-entrypoint-initdb.d/02_donnees.sql:ro
+      - ./database/niveau1_schema.sql:/docker-entrypoint-initdb.d/03_niveau1_schema.sql:ro
+      - ./database/niveau1_donnees.sql:/docker-entrypoint-initdb.d/04_niveau1_donnees.sql:ro
+      - ./database/niveau2_schema.sql:/docker-entrypoint-initdb.d/05_niveau2_schema.sql:ro
+      - ./database/niveau2_donnees.sql:/docker-entrypoint-initdb.d/06_niveau2_donnees.sql:ro
+      - ./database/niveau3_schema.sql:/docker-entrypoint-initdb.d/07_niveau3_schema.sql:ro
+      - ./database/niveau3_donnees.sql:/docker-entrypoint-initdb.d/08_niveau3_donnees.sql:ro
