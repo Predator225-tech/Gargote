@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Gargote — TP fil rouge : base de données, API REST et Vue.js
 
 Bao tient une gargote à Analakely. Il veut une petite application pour afficher sa carte, prendre les commandes en salle et suivre ce qu’il encaisse.
@@ -165,3 +166,7 @@ Toutes les réponses sont en JSON. Toutes les erreurs ont la même forme :
 | Un champ ajouté en base n’est jamais enregistré | il manque dans `$allowedFields` du modèle |
 | Une colonne booléenne arrive en `"t"` / `"f"` | il manque le `$casts` correspondant dans le modèle |
 | `{"nom": "Le champ nom doit contenir une valeur unique."}` alors qu’on modifie le plat lui-même | la règle `is_unique` n’ignore pas l’enregistrement en cours : `is_unique[plat.nom,id,{id}]` |
+=======
+# Gargote
+>>>>>>> bc9daf299458e26f7fc72f3317c3d4abd8c3970e
+# Gargote2
